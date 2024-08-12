@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <script src="mini.js"></script>
+
+    <input type="number" id="a">
+    <input type="number" id="b">
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">*</button>
+    <button onclick="div()">/</button>
+    <p id="output"></p>
+    <script>
+
+        function add() {
+            var a = document.querySelector("#a").value;
+            var b = document.querySelector("#b").value;
+            result = Module.ccall(
+                "myAdd",
+                "number",
+                ["number", "number"],
+                [a, b]
+            );
+            document.getElementById('output').innerText = result;
+        }
+        function sub() {
+            var a = document.querySelector("#a").value;
+            var b = document.querySelector("#b").value;
+            result = Module.ccall(
+                "mySub",
+                "number",
+                ["number", "number"],
+                [a, b]
+            );
+            document.getElementById('output').innerText = result;
+        }
+        function mul() {
+            var a = document.querySelector("#a").value;
+            var b = document.querySelector("#b").value;
+            result = Module.ccall(
+                "myMul",
+                "number",
+                ["number", "number"],
+                [a, b]
+            );
+            document.getElementById('output').innerText = result;
+        }
+        function div() {
+            var a = document.querySelector("#a").value;
+            var b = document.querySelector("#b").value;
+            result = Module.ccall(
+                "myDiv",
+                "number",
+                ["number", "number"],
+                [a, b]
+            );
+            document.getElementById('output').innerText = result;
+        }
+
+    </script>
+</body>
+</html>
